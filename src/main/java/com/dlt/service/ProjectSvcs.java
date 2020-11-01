@@ -37,16 +37,7 @@ public class ProjectSvcs {
 	public EOProject createProject(EOProject eoProject) {
 		EOProject eoProjectObj;
 		EORamdAppConfigSetup eoRamdAppConfigSetup = this.eoRamdAppConfigSetupRepo.findAll().get(0);
-<<<<<<< HEAD
 		if (this.projectRepo.findByClientPkCount(eoProject.getClientId().getClientId()) == eoRamdAppConfigSetup.getMaxProject()) {
-=======
-		/*
-		 * List<EOProject> epEoProjects=
-		 * this.projectRepo.findPerClientProjectCount((eoProject.getClientId().
-		 * getClientId())); System.out.println("===="+epEoProjects.size());
-		 */
-		if (this.projectRepo.count() == eoRamdAppConfigSetup.getMaxProject()) {
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 			throw new RestValidationException(ApiErrorCode.AMC02);
 		}
 		if (eoProject.getProjectId() != null) {

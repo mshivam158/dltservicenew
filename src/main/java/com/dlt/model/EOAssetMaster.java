@@ -10,11 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-<<<<<<< HEAD
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -70,7 +67,6 @@ public class EOAssetMaster extends EOObject {
 	@Enumerated(EnumType.STRING)
 	private LifeMeasure lifeMeasure;
 
-<<<<<<< HEAD
 
 	@JoinColumn(name = "ParentAssetID")
 	@ManyToOne
@@ -80,13 +76,6 @@ public class EOAssetMaster extends EOObject {
 	
 	
 	
-=======
-	@JoinColumn(name = "ParentAssetID")
-	@ManyToOne
-	@OnDelete(action = OnDeleteAction.CASCADE)
-	private EOAssetMaster parentAssetId;
-
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	public EOAssetMaster getParentAssetId() {
 		return this.parentAssetId;
 	}

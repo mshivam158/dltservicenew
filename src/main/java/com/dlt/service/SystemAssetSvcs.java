@@ -47,11 +47,7 @@ public class SystemAssetSvcs {
 		EOSystemAsset eoAssetObj;
 		EORamdAppConfigSetup eoRamdAppConfigSetup = this.eoRamdAppConfigSetupRepo.findAll().get(0);
 		if (eoSystmAsset.getAssetId() == null || eoSystmAsset.getAssetId().getAssetId() == null) {
-<<<<<<< HEAD
 			throw new RestValidationException(ApiErrorCode.AMC02);
-=======
-			throw new RestValidationException(ApiErrorCode.AMSA01);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 		}
 		if (this.systemAssetRepo.findByAssetMasterPkCount(eoSystmAsset.getAssetId().getAssetId()) == eoRamdAppConfigSetup.getMaxAssetMaster()) {
 			throw new RestValidationException(ApiErrorCode.AMC02);

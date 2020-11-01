@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
 import com.dlt.enumconstant.ApiErrorCode;
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 import com.dlt.model.EORamdAppConfigSetup;
 import com.dlt.service.RamdAppConfigSetupSvcs;
 
@@ -32,11 +29,7 @@ public class RamdAppConfigSetupController extends BaseController {
 	@RequestMapping(path = "/add", method = RequestMethod.POST)
 	public ResponseEntity<Object> addAppConfig(@RequestBody EORamdAppConfigSetup eoRamdAppConfigSetup) {
 		EORamdAppConfigSetup ramdAppConfigSetup = this.ramdAppConfigSetupSvcs.createRamdAppConfig(eoRamdAppConfigSetup);
-<<<<<<< HEAD
-		return this.successResponseForObj(ramdAppConfigSetup,ApiErrorCode.RAC01);
-=======
-		return this.successResponseForObj(ramdAppConfigSetup);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
+		return this.successResponseForObj(ramdAppConfigSetup, ApiErrorCode.RAC01);
 	}
 
 }

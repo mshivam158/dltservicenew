@@ -16,10 +16,7 @@ public interface IAssetMasterRepo extends JpaRepository<EOAssetMaster, Long> {
 	public List<EOAssetMaster> getAssetsMasterForMasterList(@Param("masterPK") Long masterPK);
 
 	List<EOAssetMaster> findByParentAssetId(EOAssetMaster parentAssetId);
-<<<<<<< HEAD
 	
 	@Query("select count(e) from EOAssetMaster e where e.assetMasterListID.assetMasterListId =:pk")
 	public long findByAssetMasterListPkCount(@Param("pk") Long pk);
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 }

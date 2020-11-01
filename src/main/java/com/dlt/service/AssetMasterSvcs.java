@@ -49,11 +49,7 @@ public class AssetMasterSvcs {
 	public EOAssetMaster createAssetMaster(EOAssetMaster eoAssetMaster) {
 		EOAssetMaster eoAssetMasterObj;
 		EORamdAppConfigSetup eoRamdAppConfigSetup = this.eoRamdAppConfigSetupRepo.findAll().get(0);
-<<<<<<< HEAD
 		if (this.assetMasterRepo.findByAssetMasterListPkCount(eoAssetMaster.getAssetMasterListID().getAssetMasterListId()) == eoRamdAppConfigSetup.getMaxAssetMaster()) {
-=======
-		if (this.assetMasterRepo.count() == eoRamdAppConfigSetup.getMaxAssetMaster()) {
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 			throw new RestValidationException(ApiErrorCode.AMC02);
 		}
 		try {

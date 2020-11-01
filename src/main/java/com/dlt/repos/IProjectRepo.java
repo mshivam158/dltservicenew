@@ -11,15 +11,10 @@ import com.dlt.model.EOProject;
 
 @Repository
 public interface IProjectRepo extends JpaRepository<EOProject, Long> {
-<<<<<<< HEAD
 	
 	@Query(name = "findByClientAccount")
 	public List<EOProject> findByClientAccount(@Param("clientPK") Long clientId);
 	
 	@Query("select count(e) from EOProject e where e.clientId.clientId =:pk")
 	public long findByClientPkCount(@Param("pk") Long pk);
-=======
-	@Query(name = "findByClientAccount")
-	public List<EOProject> findByClientAccount(@Param("clientPK") Long clientId);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 }

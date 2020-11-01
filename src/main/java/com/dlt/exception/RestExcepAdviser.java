@@ -19,11 +19,7 @@ public class RestExcepAdviser {
 	}
 	
 	private ResponseEntity<Object> buildResponseValidation(ApiErrorCode e) {
-<<<<<<< HEAD
 		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(e,false));
-=======
-		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(e));
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	}
 	@ExceptionHandler({ RestValidationException.class })
 	public ResponseEntity<Object> handle(RestValidationException e) {

@@ -3,10 +3,7 @@ package com.dlt.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Map;
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
 import com.dlt.enumconstant.ApiErrorCode;
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 import com.dlt.model.EOAssetMaster;
 import com.dlt.model.EOAssetMasterList;
 import com.dlt.model.EOSystemAsset;
@@ -29,10 +23,6 @@ import com.dlt.service.AssetMasterSvcs;
 import com.dlt.service.AssetsMasterTreeSvcs;
 import com.dlt.service.SystemAssetSvcs;
 import com.dlt.ui.AssetMasterMenuItem;
-<<<<<<< HEAD
-=======
-import com.dlt.ui.AssetsMaster;
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
@@ -61,21 +51,13 @@ public class AssetController extends BaseController {
 	@RequestMapping(path = "/master/add", method = RequestMethod.POST)
 	public ResponseEntity<Object> addAssetMaster(@RequestBody EOAssetMaster eoAssetMaster) {
 		EOAssetMaster eoAssetMasterObj = this.assetMasterSvcs.createAssetMaster(eoAssetMaster);
-<<<<<<< HEAD
 		return this.successResponseForObj(eoAssetMasterObj, ApiErrorCode.AMC01);
-=======
-		return this.successResponseForObj(eoAssetMasterObj);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	}
 
 	@RequestMapping(path = "/master/fetch/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> addAssetMaster(@PathVariable("id") Long id) {
 		EOAssetMaster eoAssetMasterObj = this.assetMasterSvcs.findAssetsMasterByID(id);
-<<<<<<< HEAD
-		return ResponseEntity.status(HttpStatus.OK).body(eoAssetMasterObj);
-=======
 		return this.successResponseForObj(eoAssetMasterObj);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	}
 
 	@RequestMapping(path = "/master/delete", method = RequestMethod.DELETE)
@@ -99,11 +81,7 @@ public class AssetController extends BaseController {
 	@RequestMapping(path = "/system/add", method = RequestMethod.POST)
 	public ResponseEntity<Object> addSystemAsset(@RequestBody EOSystemAsset eoSystmAsset) {
 		EOSystemAsset eoSystmAssetObj = this.systemAssetSvcs.createSystemAsset(eoSystmAsset);
-<<<<<<< HEAD
 		return this.successResponseForObj(eoSystmAssetObj, ApiErrorCode.SAC_01);
-=======
-		return this.successResponseForObj(eoSystmAssetObj);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	}
 
 	@RequestMapping(path = "/system/delete", method = RequestMethod.DELETE)
@@ -127,27 +105,19 @@ public class AssetController extends BaseController {
 	@RequestMapping(path = "/masterList/add", method = RequestMethod.POST)
 	public ResponseEntity<Object> addAssetMasterList(@RequestBody EOAssetMasterList eoAssetMasterListObj) {
 		EOAssetMasterList eoAssetMasterList = this.assetMasterListSvcs.createAssetMasterList(eoAssetMasterListObj);
-<<<<<<< HEAD
 		return this.successResponseForObj(eoAssetMasterList, ApiErrorCode.AMLC_01);
-=======
-		return this.successResponseForObj(eoAssetMasterList);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 	}
 
 	@RequestMapping(path = "/masterList/fetch/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> addAssetMasterList(@PathVariable("id") Long id) {
 		EOAssetMasterList eoAssetMasterList = this.assetMasterListSvcs.findMasterListByID(id);
-<<<<<<< HEAD
 		return ResponseEntity.status(HttpStatus.OK).body(eoAssetMasterList);
 	}
 
 	@RequestMapping(path = "/masterList/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getAssetMasterfromMasterList(@PathVariable("id") Long id) {
 		List<EOAssetMaster> eoAssetMasterList = this.assetMasterListSvcs.getAssetsMasterFromMasterList(id);
-		return ResponseEntity.status(HttpStatus.OK).body(eoAssetMasterList);
-=======
-		return this.successResponseForObj(eoAssetMasterList);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
+		return this.successResponseForList(eoAssetMasterList);
 	}
 
 	@RequestMapping(path = "/masterList/delete", method = RequestMethod.DELETE)
@@ -172,11 +142,7 @@ public class AssetController extends BaseController {
 
 	@RequestMapping(path = "/masterList/tree/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getTreeViewOfMasterList(@PathVariable("id") Long masterListId) {
-<<<<<<< HEAD
 		Map<String, Object> treeView = this.assetsMasterTreeSvcs.getTreeStructure(masterListId);
-=======
-		ArrayList<AssetsMaster> treeView = this.assetsMasterTreeSvcs.getTreeStructure(masterListId);
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 		return ResponseEntity.status(HttpStatus.OK).body(treeView);
 	}
 }

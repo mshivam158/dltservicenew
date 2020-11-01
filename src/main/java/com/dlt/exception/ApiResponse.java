@@ -32,15 +32,13 @@ public class ApiResponse implements Serializable {
 		this.msg = errorCode.getMsg();
 		this.errorCode = errorCode.getId();
 	}
-<<<<<<< HEAD
-	public ApiResponse(ApiErrorCode errorCode,boolean isError) {
+
+	public ApiResponse(ApiErrorCode errorCode, boolean isError) {
 		super();
 		this.isError = isError;
 		this.msg = errorCode.getMsg();
 		this.errorCode = errorCode.getId();
 	}
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
 
 	public ApiResponse(int status, String msg, boolean isError) {
 		super();
@@ -95,15 +93,12 @@ public class ApiResponse implements Serializable {
 		this.status = 200;
 		return this;
 	}
-<<<<<<< HEAD
-	public ApiResponse buildSuccess(Object data,ApiErrorCode apiErrorCode) {
+
+	public ApiResponse buildSuccess(Object data, ApiErrorCode apiErrorCode) {
 		this.data = data;
 		this.isError = false;
 		this.status = 200;
 		this.msg = apiErrorCode.getMsg();
 		return this;
 	}
-=======
->>>>>>> 0cafe5a7108d2f68ceef800440f635e08371df52
-
 }
