@@ -25,8 +25,9 @@ public class AssetsMasterTreeSvcs {
 	@Autowired
 	private IAssetMasterListRepo assetMasterListRepo;
 
-	public Map<String, Object> getTreeStructure(Long masterListId) {
+	public ArrayList<Object> getTreeStructure(Long masterListId) {
 		Map<String, Object> treeMap= new HashMap<String, Object>();
+		ArrayList<Object> returnList = new ArrayList<Object>();
 		ArrayList<AssetsMaster> treeView = new ArrayList<AssetsMaster>();
 		Optional<EOAssetMasterList> eoAssetMasterList= assetMasterListRepo.findById(masterListId);
 		
@@ -35,8 +36,12 @@ public class AssetsMasterTreeSvcs {
 			AssetsMaster master = this.getAssetsMater(asset);
 			treeView.add(master);
 		});
-		treeMap.put(eoAssetMasterList.get().getAssetMasterName(), treeView);
-		return treeMap;
+		treeMap.put("name", eoAssetMasterList.get().getAssetMasterName());
+		treeMap.put("id", eoAssetMasterList.get().getAssetMasterListId());
+		treeMap.put("children", treeView);
+		returnList.add(treeMap);
+		//treeMap.put(eoAssetMasterList.get().getAssetMasterName(), treeView);
+		return returnList;
 	}
 
 	private AssetsMaster getAssetsMater(EOAssetMaster eoAssetsMaster) {

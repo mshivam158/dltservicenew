@@ -23,6 +23,7 @@ import com.dlt.service.AssetMasterSvcs;
 import com.dlt.service.AssetsMasterTreeSvcs;
 import com.dlt.service.SystemAssetSvcs;
 import com.dlt.ui.AssetMasterMenuItem;
+import com.dlt.ui.AssetsMaster;
 
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
@@ -142,7 +143,7 @@ public class AssetController extends BaseController {
 
 	@RequestMapping(path = "/masterList/tree/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Object> getTreeViewOfMasterList(@PathVariable("id") Long masterListId) {
-		Map<String, Object> treeView = this.assetsMasterTreeSvcs.getTreeStructure(masterListId);
+		ArrayList<Object> treeView = this.assetsMasterTreeSvcs.getTreeStructure(masterListId);
 		return ResponseEntity.status(HttpStatus.OK).body(treeView);
 	}
 }
